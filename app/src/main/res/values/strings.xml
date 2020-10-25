@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Headline Hustle</string>
     <string name="imagecontent">imageContent</string>
+    <string name="headline_hustle">Headline Hustle</string>
+    <string name="Null">null</string>
+    <string name="refresh">Refresh</string>
+    <string name="share">share</string>
 </resources>
