@@ -27,6 +27,9 @@ class MainActivity : AppCompatActivity(), NewsItemClicked {
         mUrl = "https://newsapi.org/v2/top-headlines?country=in&apiKey=545a329288564e42a8f667d36ab9f00b"
 
 
+        /*
+        To refresh the news we are getting in our recycler view
+         */
         pullToRefresh.setOnRefreshListener {
             refreshData() // your code
             pullToRefresh.isRefreshing = false
@@ -64,7 +67,10 @@ class MainActivity : AppCompatActivity(), NewsItemClicked {
                         newsJsonObject.getString("title"),
                         newsJsonObject.getString("author"),
                         newsJsonObject.getString("url"),
-                        newsJsonObject.getString("urlToImage")
+                        newsJsonObject.getString("urlToImage"),
+                        newsJsonObject.getString("description"),
+                        newsJsonObject.getJSONObject("source"),
+                        newsJsonObject.getString("publishedAt"),
                     )
                     newsArray.add(news)
                 }
@@ -97,7 +103,7 @@ class MainActivity : AppCompatActivity(), NewsItemClicked {
 
     }
 
-    fun refresh() {
+    fun refresh(view: View) {
 
         Toast.makeText(this, "Gets refreshed after 15 minutes", Toast.LENGTH_LONG).show()
         mUrl = "https://newsapi.org/v2/top-headlines?country=in&category=general&apiKey=545a329288564e42a8f667d36ab9f00b"

@@ -6,17 +6,21 @@
     android:layout_marginStart="15dp"
     android:layout_marginEnd="15dp"
     android:layout_marginBottom="15dp"
-    android:background="@drawable/card_background"
-    android:paddingBottom="16dp">
+    android:background="@drawable/card_background">
+
 
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#222222"
-        android:elevation="8dp"
+        android:backgroundTint="#2B2B2B"
+        app:cardElevation="0dp"
+        android:fadingEdge="vertical"
         app:cardCornerRadius="10dp"
+        app:cardUseCompatPadding="true"
+        app:cardBackgroundColor="#fff"
+        app:cardPreventCornerOverlap="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,7 +29,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:elevation="5dp">
 
             <ImageView
                 android:id="@+id/image"
@@ -42,16 +47,29 @@
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="16dp"
                 android:ellipsize="end"
-                android:maxLines="2"
+                android:maxLines="3"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="16dp">
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp">
 
                 <TextView
                     android:id="@+id/author"
@@ -59,8 +77,22 @@
                     android:layout_height="wrap_content"
                     android:text="@string/Null"
                     android:textColor="#ffffff"
+                    android:ellipsize="end"
+                    android:textSize="12sp"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"/>
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@id/author"
+                    android:ellipsize="end"
+                    android:text="@string/Null"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
 
                 <ImageView
                     android:id="@+id/shareNews"
@@ -69,6 +101,7 @@
                     android:layout_alignParentEnd="true"
                     android:clickable="true"
                     android:focusable="true"
+                    android:layout_centerVertical="true"
                     android:layout_margin="5dp"
                     android:src="@drawable/share"
                     android:contentDescription="@string/share"
@@ -81,6 +114,52 @@
 
 
     </androidx.cardview.widget.CardView>
+
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:id="@+id/card_griditem"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_margin="8dp"-->
+<!--        app:cardCornerRadius="3dp"-->
+<!--        app:cardElevation="4dp"-->
+<!--        app:cardUseCompatPadding="true"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/card">-->
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="16dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginEnd="16dp"-->
+<!--            android:layout_marginBottom="16dp">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/author1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentStart="true"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:text="@string/Null"-->
+<!--                android:textColor="#ffffff" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/shareNews1"-->
+<!--                android:layout_width="18dp"-->
+<!--                android:layout_height="18dp"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:layout_margin="5dp"-->
+<!--                android:clickable="true"-->
+<!--                android:contentDescription="@string/share"-->
+<!--                android:focusable="true"-->
+<!--                android:src="@drawable/share"-->
+<!--                app:tint="#fff" />-->
+
+<!--        </RelativeLayout>-->
+
+
+<!--    </androidx.cardview.widget.CardView>-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
